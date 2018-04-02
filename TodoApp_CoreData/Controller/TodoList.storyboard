@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xkd-Zf-es4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo-->
+        <scene sceneID="1Hm-wN-b1p">
+            <objects>
+                <viewController storyboardIdentifier="TodoListController" id="TQJ-97-rJV" customClass="TodoListController" customModule="TodoApp_CoreData" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bVz-oO-bcA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FyD-Qs-3XH">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListCell" rowHeight="70" id="WMj-mH-Bav" customClass="TodoListCell" customModule="TodoApp_CoreData" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WMj-mH-Bav" id="Y7f-aQ-nBE">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjF-mZ-C48">
+                                                    <rect key="frame" x="20" y="21.5" width="345" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRv-BJ-Bdi">
+                                                    <rect key="frame" x="10" y="44" width="355" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zjF-mZ-C48" firstAttribute="centerY" secondItem="Y7f-aQ-nBE" secondAttribute="centerY" multiplier="0.9" id="8l6-JH-OUI"/>
+                                                <constraint firstItem="eRv-BJ-Bdi" firstAttribute="leading" secondItem="Y7f-aQ-nBE" secondAttribute="leading" constant="10" id="KRJ-d2-Ss3"/>
+                                                <constraint firstAttribute="trailing" secondItem="eRv-BJ-Bdi" secondAttribute="trailing" constant="10" id="SS8-uI-eHF"/>
+                                                <constraint firstItem="eRv-BJ-Bdi" firstAttribute="centerY" secondItem="Y7f-aQ-nBE" secondAttribute="centerY" multiplier="1.5" id="XKR-Xb-2xP"/>
+                                                <constraint firstAttribute="trailing" secondItem="zjF-mZ-C48" secondAttribute="trailing" constant="10" id="hcv-P0-m0R"/>
+                                                <constraint firstItem="zjF-mZ-C48" firstAttribute="leading" secondItem="Y7f-aQ-nBE" secondAttribute="leading" constant="20" id="im6-M1-4xV"/>
+                                                <constraint firstItem="eRv-BJ-Bdi" firstAttribute="centerX" secondItem="Y7f-aQ-nBE" secondAttribute="centerX" id="lZo-KQ-kCo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="task" destination="zjF-mZ-C48" id="K9A-RF-dlJ"/>
+                                            <outlet property="time" destination="eRv-BJ-Bdi" id="7Fx-KW-eKK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzu-SC-mys">
+                                <rect key="frame" x="284" y="565.5" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.074509803920000006" green="0.56470588239999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="8ct-ns-zbs"/>
+                                    <constraint firstAttribute="height" constant="70" id="CCU-kE-2A3"/>
+                                </constraints>
+                                <state key="normal" title="全件削除">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="deleteAll:" destination="TQJ-97-rJV" eventType="touchUpInside" id="0cI-b8-Tn6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nzu-SC-mys" firstAttribute="centerY" secondItem="bVz-oO-bcA" secondAttribute="centerY" multiplier="1.8" id="9Sq-Nh-zGg"/>
+                            <constraint firstItem="0Jr-gv-WLe" firstAttribute="bottom" secondItem="FyD-Qs-3XH" secondAttribute="bottom" id="KDC-xT-bAN"/>
+                            <constraint firstItem="FyD-Qs-3XH" firstAttribute="leading" secondItem="0Jr-gv-WLe" secondAttribute="leading" id="VkC-oq-msZ"/>
+                            <constraint firstItem="FyD-Qs-3XH" firstAttribute="top" secondItem="0Jr-gv-WLe" secondAttribute="top" id="e8E-Ol-Bkb"/>
+                            <constraint firstItem="nzu-SC-mys" firstAttribute="centerX" secondItem="bVz-oO-bcA" secondAttribute="centerX" multiplier="1.7" id="hbG-Ds-GEY"/>
+                            <constraint firstItem="0Jr-gv-WLe" firstAttribute="trailing" secondItem="FyD-Qs-3XH" secondAttribute="trailing" id="mp1-57-VWx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Jr-gv-WLe"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Todo" id="hok-5V-PGH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="WFH-aP-Zmj">
+                            <connections>
+                                <action selector="addTask:" destination="TQJ-97-rJV" id="Tlb-eP-8NS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="allDeleteButton" destination="nzu-SC-mys" id="GPQ-DR-iQW"/>
+                        <outlet property="todoList" destination="FyD-Qs-3XH" id="WuV-fY-AxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqx-9s-Gj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="768.79999999999995" y="169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FO0-7x-jQ7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xkd-Zf-es4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="5N1-yb-zYM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TQJ-97-rJV" kind="relationship" relationship="rootViewController" id="lZb-Q2-r4c"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0t8-GW-dcN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="109.59999999999999" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+</document>
