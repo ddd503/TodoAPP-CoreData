@@ -20,18 +20,18 @@ protocol AlertHelperDelegate: class {
 
 /// テキストボックス入りのアラートを生成する
 final class AlertHelper: NSObject {
-
+    
     weak var delegate: AlertHelperDelegate?
     
     private var alert = UIAlertController()
     
     func addAlert(type: inputType,
                   title: String?,
-                  message: String?,
+                  textFieldText: String?,
                   rightButtonActionName: String = "OK",
                   leftButtonActionName: String = "キャンセル") -> UIAlertController {
         
-        alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         
         let rightButtonAction = UIAlertAction(title: rightButtonActionName, style: .default) { _ in
             // テキストフィールド内のテキストを取得
@@ -41,7 +41,7 @@ final class AlertHelper: NSObject {
                 self.delegate?.save(inputType: type, inputTask: inputTask)
             }
         }
-
+        
         let leftButtonAction = UIAlertAction(title: leftButtonActionName, style: .cancel, handler: nil)
         
         alert.addAction(leftButtonAction)
@@ -50,9 +50,11 @@ final class AlertHelper: NSObject {
         alert.addTextField {  [weak self] (textField)  in
             textField.delegate = self
             textField.placeholder = "タスクを入力"
-            
+            textField.text = textFieldText
             // OKボタンを非活性
-            if let okButton = self?.alert.actions.last {
+            if
+                let okButton = self?.alert.actions.last,
+                textFieldText == nil {
                 okButton.isEnabled = false
             }
         }

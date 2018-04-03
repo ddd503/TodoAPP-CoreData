@@ -86,7 +86,7 @@ class TodoListDao: NSObject {
         /// 情報のアップデート
         task.setValue(NSDate(), forKeyPath: "registTime")
         task.setValue(updateTask, forKey: "task")
-
+        
         do {
             try context.save()
             select()
@@ -119,10 +119,10 @@ class TodoListDao: NSObject {
             print("NSManagedObjectContextの取得に失敗")
             return
         }
-                
+        
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Todo")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
+        
         do {
             try context.execute(deleteRequest)
             select()

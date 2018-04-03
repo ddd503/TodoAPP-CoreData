@@ -42,7 +42,7 @@ class TodoListController: UIViewController {
     @IBAction func addTask(_ sender: Any) {
         let addAlert = alertHelper.addAlert(type: .add,
                                             title: "新規追加",
-                                            message: nil)
+                                            textFieldText: nil)
         self.present(addAlert, animated: true, completion: nil)
     }
     
@@ -109,7 +109,7 @@ extension TodoListController: UITableViewDelegate {
             let selectedTask = provider.todoData[indexPath.row]
             let updateAlert = alertHelper.addAlert(type: .update(task: selectedTask),
                                                    title: "内容変更",
-                                                   message: nil)
+                                                   textFieldText: selectedTask.value(forKey: "task") as? String)
             self.present(updateAlert, animated: true, completion: nil)
         }
     }

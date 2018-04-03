@@ -29,14 +29,13 @@ extension TodoListProvider: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TodoListCell.identifier,
                                                        for: indexPath) as? TodoListCell else {
-            fatalError("セルの作成に失敗")
+                                                        fatalError("セルの作成に失敗")
         }
         
         cell.taskInfo = todoData[indexPath.row]
         
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCellEditingStyle,
