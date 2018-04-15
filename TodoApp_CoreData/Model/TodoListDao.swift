@@ -13,7 +13,7 @@ protocol TodoListDaoDelegate: class {
     func reload(dataSource: [NSManagedObject])
 }
 
-class TodoListDao: NSObject {
+class TodoListDao {
     
     //MARK: - Properties
     var fetchedArray = [NSManagedObject]()
